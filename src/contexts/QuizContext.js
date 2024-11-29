@@ -76,7 +76,7 @@ function QuizProvider({ children }) {
   const totalPoints = questions.reduce((prev, cur) => prev + cur.points, 0);
 
   useEffect(function () {
-    fetch('http://localhost:8000/questions')
+    fetch('https://raw.githubusercontent.com/sarahsherien/React-Quiz/refs/heads/main/data/questions.json')
       .then((res) => res.json())
       .then((data) => dispatch({ type: 'dataReceived', payload: data }))
       .catch((err) => dispatch({ type: 'dataFailed' }));
